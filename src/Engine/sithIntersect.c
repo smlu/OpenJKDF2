@@ -181,6 +181,7 @@ int sithIntersect_CollideThings(sithThing *pThing, const rdVector3 *a2, const rd
     rdMatrix_InvertOrtho34(&out, &v11->lookOrientation);
     rdMatrix_TransformPoint34Acc(&posVec, &out);
     rdMatrix_TransformVector34Acc(&dirVec, &out);
+    rdVector_Zero3(&v11->lookOrientation.scale); // Fixed: Reset position vector to zero
     v26 = a11;
     v27 = v11->rdthing.model3->geosets;
     v28 = 0;
